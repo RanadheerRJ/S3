@@ -1,17 +1,5 @@
 pipeline {
     agent any
-
-    tools {
-        // Define SonarQube scanner tool if it's not automatically detected
-        sonarQube 'SonarQubeTool'
-    }
-
-    environment {
-        // Define the project key, ideally this should be in your SonarQube project settings
-        SONAR_PROJECT_KEY = 'download_file'
-        SONAR_HOST_URL = 'http://your-sonarqube-server-url'
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
@@ -31,7 +19,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    // Run SonarQube scanner
+                   
                     withSonarQubeEnv('sonar') {
                         sh """
                            sonar-scanner \
@@ -51,12 +39,6 @@ pipeline {
                     sh 'python3 download_s3.py'
                 }
             }
-        }
-    }
-    post {
-        always {
-            // Notify or handle pipeline completion
-            echo 'Check SonarQube for analysis details'
         }
     }
 }
