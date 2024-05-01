@@ -11,7 +11,7 @@ def download_file_from_s3(bucket_name, s3_object_key, local_file_path):
 # Example usage
 bucket_name = 'myimages99'
 s3_object_key = 'Ranadheer_Are_amazon.pdf'
-local_file_path = '/root/pdfs/downloaded_file.pdf'  # Adjust the path as needed
+local_file_path = '/root/downloaded_file.pdf'  # Adjust the path as needed
 
 download_file_from_s3(bucket_name, s3_object_key, local_file_path)
 
