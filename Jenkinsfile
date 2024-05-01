@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        // Define any environment variables here
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
@@ -30,17 +26,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            echo 'This will always run'
-        }
-        success {
-            echo 'The job was a success!'
-        }
-        failure {
-            echo 'The job failed.'
-        }
-    }
 }
-
