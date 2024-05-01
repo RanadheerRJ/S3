@@ -21,7 +21,7 @@ pipeline {
         stage('Run Script') {
             steps {
                 script {
-                    sh 'python333 download_s3.py'
+                    sh 'python3 download_s3.py'
                 }
             }
         }
